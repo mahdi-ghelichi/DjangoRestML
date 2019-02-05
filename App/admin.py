@@ -1,3 +1,4 @@
 from django.contrib import admin
+from App.models import RFModel
 
-# Register your models here.
+admin.site.register(RFModel)
