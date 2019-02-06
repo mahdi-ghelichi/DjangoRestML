@@ -42,10 +42,12 @@ class Predict(views.APIView):
             try:
                 result = model.predict(pd.DataFrame([entry]))
                 predictions.append(result[0])
-                return Response(predictions, status=status.HTTP_200_OK)
 
             except Exception as err:
                 return Response(str(err), status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(predictions, status=status.HTTP_200_OK)
+
 
 
 
